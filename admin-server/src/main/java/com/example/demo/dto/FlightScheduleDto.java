@@ -1,31 +1,17 @@
-package com.example.demo.entity;
+package com.example.demo.dto;
 
 import java.sql.Timestamp;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import lombok.Data;
-
 /**
- * The Class FlightScheduleEntity.
+ * The Class FlightScheduleDto.
  */
-@Entity
-@Table(name = "Flight_Schedule_Entity")
-@Data
-public class FlightScheduleEntity {
+public class FlightScheduleDto {
 
-	/** The id. */
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
+	/** The airline id. */
 	private Long airlineId;
 
+	/** The flight id. */
 	private Long flightId;
 
 	/** The flight no. */
@@ -58,106 +44,218 @@ public class FlightScheduleEntity {
 	/** The specific days list. */
 	private String specificDaysList;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getFlightNo() {
-		return flightNo;
-	}
-
+	/**
+	 * Gets the airline id.
+	 *
+	 * @return the airline id
+	 */
 	public Long getAirlineId() {
 		return airlineId;
 	}
 
+	/**
+	 * Sets the airline id.
+	 *
+	 * @param airlineId the new airline id
+	 */
 	public void setAirlineId(Long airlineId) {
 		this.airlineId = airlineId;
 	}
 
+	/**
+	 * Gets the flight id.
+	 *
+	 * @return the flight id
+	 */
 	public Long getFlightId() {
 		return flightId;
 	}
 
+	/**
+	 * Sets the flight id.
+	 *
+	 * @param flightId the new flight id
+	 */
 	public void setFlightId(Long flightId) {
 		this.flightId = flightId;
 	}
 
+	/**
+	 * Gets the flight no.
+	 *
+	 * @return the flight no
+	 */
+	public String getFlightNo() {
+		return flightNo;
+	}
+
+	/**
+	 * Sets the flight no.
+	 *
+	 * @param flightNo the new flight no
+	 */
 	public void setFlightNo(String flightNo) {
 		this.flightNo = flightNo;
 	}
 
+	/**
+	 * Gets the start date.
+	 *
+	 * @return the start date
+	 */
 	public Date getStartDate() {
 		return startDate;
 	}
 
+	/**
+	 * Sets the start date.
+	 *
+	 * @param startDate the new start date
+	 */
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
 
+	/**
+	 * Gets the end date.
+	 *
+	 * @return the end date
+	 */
 	public Date getEndDate() {
 		return endDate;
 	}
 
+	/**
+	 * Sets the end date.
+	 *
+	 * @param endDate the new end date
+	 */
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 
+	/**
+	 * Gets the take off time.
+	 *
+	 * @return the take off time
+	 */
 	public Timestamp getTakeOffTime() {
 		return takeOffTime;
 	}
 
+	/**
+	 * Sets the take off time.
+	 *
+	 * @param takeOffTime the new take off time
+	 */
 	public void setTakeOffTime(Timestamp takeOffTime) {
 		this.takeOffTime = takeOffTime;
 	}
 
+	/**
+	 * Gets the landing time.
+	 *
+	 * @return the landing time
+	 */
 	public Timestamp getLandingTime() {
 		return landingTime;
 	}
 
+	/**
+	 * Sets the landing time.
+	 *
+	 * @param landingTime the new landing time
+	 */
 	public void setLandingTime(Timestamp landingTime) {
 		this.landingTime = landingTime;
 	}
 
+	/**
+	 * Gets the daily.
+	 *
+	 * @return the daily
+	 */
 	public Integer getDaily() {
 		return daily;
 	}
 
+	/**
+	 * Sets the daily.
+	 *
+	 * @param daily the new daily
+	 */
 	public void setDaily(Integer daily) {
 		this.daily = daily;
 	}
 
+	/**
+	 * Gets the week days.
+	 *
+	 * @return the week days
+	 */
 	public Integer getWeekDays() {
 		return weekDays;
 	}
 
+	/**
+	 * Sets the week days.
+	 *
+	 * @param weekDays the new week days
+	 */
 	public void setWeekDays(Integer weekDays) {
 		this.weekDays = weekDays;
 	}
 
+	/**
+	 * Gets the week ends.
+	 *
+	 * @return the week ends
+	 */
 	public Integer getWeekEnds() {
 		return weekEnds;
 	}
 
+	/**
+	 * Sets the week ends.
+	 *
+	 * @param weekEnds the new week ends
+	 */
 	public void setWeekEnds(Integer weekEnds) {
 		this.weekEnds = weekEnds;
 	}
 
+	/**
+	 * Gets the specific days.
+	 *
+	 * @return the specific days
+	 */
 	public Integer getSpecificDays() {
 		return specificDays;
 	}
 
+	/**
+	 * Sets the specific days.
+	 *
+	 * @param specificDays the new specific days
+	 */
 	public void setSpecificDays(Integer specificDays) {
 		this.specificDays = specificDays;
 	}
 
+	/**
+	 * Gets the specific days list.
+	 *
+	 * @return the specific days list
+	 */
 	public String getSpecificDaysList() {
 		return specificDaysList;
 	}
 
+	/**
+	 * Sets the specific days list.
+	 *
+	 * @param specificDaysList the new specific days list
+	 */
 	public void setSpecificDaysList(String specificDaysList) {
 		this.specificDaysList = specificDaysList;
 	}
