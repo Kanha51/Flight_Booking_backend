@@ -67,6 +67,9 @@ public class FlightScheduleDto {
      */
     private String specificDaysList;
 
+
+    private Double flightTime;
+
     /**
      * Gets the airline id.
      *

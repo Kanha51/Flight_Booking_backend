@@ -68,6 +68,7 @@ public class FlightScheduleEntity {
      */
     private Integer specificDays;
 
+    private Double fligtTime;
     /**
      * The specific days list.
      */
@@ -170,4 +171,11 @@ public class FlightScheduleEntity {
         this.specificDaysList = specificDaysList;
     }
 
+    public Double getFligtTime() {
+        return fligtTime;
+    }
+
+    public void setFligtTime(Double fligtTime) {
+        this.fligtTime = fligtTime;
+    }
 }

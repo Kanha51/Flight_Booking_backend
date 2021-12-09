@@ -1,8 +1,7 @@
-package com.example.adminserver.config;
+package com.example.users.config;
 
-
-import com.example.adminserver.security.filter.JwtAuthEntryPoint;
-import com.example.adminserver.security.filter.JwtRequestFilter;
+import com.example.users.security.filter.JwtAuthEntryPoint;
+import com.example.users.security.filter.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -91,7 +90,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/api/v1.0/admin/login",
+        web.ignoring().antMatchers("/api/v1.0/user/login",
                 "/docs",
                 "/ui.html",
                 "/h2-console",
