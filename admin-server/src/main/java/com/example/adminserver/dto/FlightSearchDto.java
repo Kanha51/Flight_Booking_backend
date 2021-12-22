@@ -1,4 +1,4 @@
-package com.example.users.dto;
+package com.example.adminserver.dto;
 
 import java.io.Serializable;
 import java.sql.Date;

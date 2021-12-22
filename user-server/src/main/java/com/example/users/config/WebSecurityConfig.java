@@ -1,7 +1,5 @@
 package com.example.users.config;
 
-import com.example.users.security.filter.JwtAuthEntryPoint;
-import com.example.users.security.filter.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +17,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.example.users.security.filter.JwtAuthEntryPoint;
+import com.example.users.security.filter.JwtRequestFilter;
+
 /**
  * The type Web security config.
  */
@@ -27,99 +28,85 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    /**
-     * The Jwt request filter.
-     */
-    private JwtRequestFilter jwtRequestFilter;
-    /**
-     * The Jwt user details service.
-     */
-    @Autowired
-    private UserDetailsService jwtUserDetailsService;
-    /**
-     * The Jwt auth entry point.
-     */
-    private JwtAuthEntryPoint jwtAuthEntryPoint;
+	/**
+	 * The Jwt request filter.
+	 */
+	private JwtRequestFilter jwtRequestFilter;
+	/**
+	 * The Jwt user details service.
+	 */
+	@Autowired
+	private UserDetailsService jwtUserDetailsService;
+	/**
+	 * The Jwt auth entry point.
+	 */
+	private JwtAuthEntryPoint jwtAuthEntryPoint;
 
-    /**
-     * Sets jwt request filter.
-     *
-     * @param jwtRequestFilter the jwt request filter
-     */
-    @Autowired
-    public void setJwtRequestFilter(JwtRequestFilter jwtRequestFilter) {
-        this.jwtRequestFilter = jwtRequestFilter;
-    }
+	/**
+	 * Sets jwt request filter.
+	 *
+	 * @param jwtRequestFilter the jwt request filter
+	 */
+	@Autowired
+	public void setJwtRequestFilter(JwtRequestFilter jwtRequestFilter) {
+		this.jwtRequestFilter = jwtRequestFilter;
+	}
 
-    /**
-     * Sets jwt auth entry point.
-     *
-     * @param jwtAuthEntryPoint the jwt auth entry point
-     */
-    @Autowired
-    public void setJwtAuthEntryPoint(JwtAuthEntryPoint jwtAuthEntryPoint) {
-        this.jwtAuthEntryPoint = jwtAuthEntryPoint;
-    }
+	/**
+	 * Sets jwt auth entry point.
+	 *
+	 * @param jwtAuthEntryPoint the jwt auth entry point
+	 */
+	@Autowired
+	public void setJwtAuthEntryPoint(JwtAuthEntryPoint jwtAuthEntryPoint) {
+		this.jwtAuthEntryPoint = jwtAuthEntryPoint;
+	}
 
-    /**
-     * Password encoder password encoder.
-     *
-     * @return the password encoder
-     */
-    @Autowired
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	/**
+	 * Password encoder password encoder.
+	 *
+	 * @return the password encoder
+	 */
+	@Autowired
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
-    /**
-     * Configure global.
-     *
-     * @param auth the auth
-     * @throws Exception the exception
-     */
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoder());
-    }
+	/**
+	 * Configure global.
+	 *
+	 * @param auth the auth
+	 * @throws Exception the exception
+	 */
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoder());
+	}
 
-    @Override
-    @Bean(BeanIds.AUTHENTICATION_MANAGER)
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
+	@Override
+	@Bean(BeanIds.AUTHENTICATION_MANAGER)
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/api/v1.0/user/login",
-                "/docs",
-                "/ui.html",
-                "/h2-console",
-                "/swagger-resources/**",
-                "/swagger-ui.html",
-                "/v2/api-docs",
-                "/webjars/**",
-                "/h2-console",
-                "/v2/api-docs",
-                "/webjars/**",
-                "/ui/**",
-                "**/search");
-    }
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/**","/api/v1.0/user/login", "/api/v1.0/flight/search",
+				// "/api/v1.0/flight/booking",
+				"/api/v1.0/flight/signup",
+				// "/api/v1.0/flight/flighthistory",
+				// "/api/v1.0/flight/cancel",
+				"/docs", "/ui.html", "/h2-console", "/swagger-resources/**", "/swagger-ui.html", "/v2/api-docs",
+				"/webjars/**", "/h2-console", "/v2/api-docs", "/webjars/**", "/ui/**");
+	}
 
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/authenticate")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
-                .and()
-                .exceptionHandling()
-                .authenticationEntryPoint(jwtAuthEntryPoint)
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+	@Override
+	protected void configure(HttpSecurity httpSecurity) throws Exception {
+		httpSecurity.csrf().disable().authorizeRequests().antMatchers("/authenticate").permitAll().anyRequest()
+				.authenticated().and().exceptionHandling().authenticationEntryPoint(jwtAuthEntryPoint).and()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
-    }
+		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+	}
+
 }

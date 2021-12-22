@@ -1,9 +1,14 @@
 package com.example.adminserver.entity;
 
-import lombok.Data;
-
-import javax.persistence.*;
 import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
 
 /**
  * The Class FlightScheduleEntity.
@@ -13,169 +18,300 @@ import java.util.Date;
 @Data
 public class FlightScheduleEntity {
 
-    /**
-     * The id.
-     */
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+	/**
+	 * The id.
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    private String airlineId;
+	/**
+	 * The take off time.
+	 */
+	private Date takeOffTime;
 
+	/**
+	 * The landing time.
+	 */
+	private Date landingTime;
 
-    /**
-     * The flight no.
-     */
-    private String flightNo;
+	/**
+	 * The business seats.
+	 */
+	private Long businessSeats;
 
-    /**
-     * The start date.
-     */
-    private Date startDate;
+	/**
+	 * The non business seats.
+	 */
+	private Long nonBusinessSeats;
 
-    /**
-     * The end date.
-     */
-    private Date endDate;
+	/**
+	 * The no of rows.
+	 */
+	private Long noOfRows;
 
-    /**
-     * The take off time.
-     */
-    private Date takeOffTime;
+	/**
+	 * The discount.
+	 */
+	private Double discount;
 
-    /**
-     * The landing time.
-     */
-    private Date landingTime;
+	/**
+	 * The tax.
+	 */
+	private Double tax;
 
-    /**
-     * The daily.
-     */
-    private Integer daily;
+	/**
+	 * The other charges.
+	 */
+	private Double otherCharges;
 
-    /**
-     * The week days.
-     */
-    private Integer weekDays;
+	/**
+	 * The ticket cost.
+	 */
+	private Double ticketCost;
 
-    /**
-     * The week ends.
-     */
-    private Integer weekEnds;
+	/**
+	 * The other charge info.
+	 */
+	private String otherChargeInfo;
 
-    /**
-     * The specific days.
-     */
-    private Integer specificDays;
+	/** The flight no. */
+	private String flightNo;
 
-    private Double fligtTime;
-    /**
-     * The specific days list.
-     */
-    private String specificDaysList;
+	/** The block. */
+	private int block = 0;
 
-    public Long getId() {
-        return id;
-    }
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	/**
+	 * Sets the id.
+	 *
+	 * @param id the new id
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getFlightNo() {
-        return flightNo;
-    }
+	/**
+	 * Gets the take off time.
+	 *
+	 * @return the take off time
+	 */
+	public java.util.Date getTakeOffTime() {
+		return takeOffTime;
+	}
 
-    public void setFlightNo(String flightNo) {
-        this.flightNo = flightNo;
-    }
+	/**
+	 * Sets the take off time.
+	 *
+	 * @param takeOffTime the new take off time
+	 */
+	public void setTakeOffTime(java.util.Date takeOffTime) {
+		this.takeOffTime = takeOffTime;
+	}
 
-    public String getAirlineId() {
-        return airlineId;
-    }
+	/**
+	 * Gets the landing time.
+	 *
+	 * @return the landing time
+	 */
+	public java.util.Date getLandingTime() {
+		return landingTime;
+	}
 
-    public void setAirlineId(String airlineId) {
-        this.airlineId = airlineId;
-    }
+	/**
+	 * Sets the landing time.
+	 *
+	 * @param landingTime the new landing time
+	 */
+	public void setLandingTime(java.util.Date landingTime) {
+		this.landingTime = landingTime;
+	}
 
+	/**
+	 * Gets the business seats.
+	 *
+	 * @return the business seats
+	 */
+	public Long getBusinessSeats() {
+		return businessSeats;
+	}
 
-    public Date getStartDate() {
-        return startDate;
-    }
+	/**
+	 * Sets the business seats.
+	 *
+	 * @param businessSeats the new business seats
+	 */
+	public void setBusinessSeats(Long businessSeats) {
+		this.businessSeats = businessSeats;
+	}
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
+	/**
+	 * Gets the non business seats.
+	 *
+	 * @return the non business seats
+	 */
+	public Long getNonBusinessSeats() {
+		return nonBusinessSeats;
+	}
 
-    public Date getEndDate() {
-        return endDate;
-    }
+	/**
+	 * Sets the non business seats.
+	 *
+	 * @param nonBusinessSeats the new non business seats
+	 */
+	public void setNonBusinessSeats(Long nonBusinessSeats) {
+		this.nonBusinessSeats = nonBusinessSeats;
+	}
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
+	/**
+	 * Gets the no of rows.
+	 *
+	 * @return the no of rows
+	 */
+	public Long getNoOfRows() {
+		return noOfRows;
+	}
 
-    public Date getTakeOffTime() {
-        return takeOffTime;
-    }
+	/**
+	 * Sets the no of rows.
+	 *
+	 * @param noOfRows the new no of rows
+	 */
+	public void setNoOfRows(Long noOfRows) {
+		this.noOfRows = noOfRows;
+	}
 
-    public void setTakeOffTime(Date takeOffTime) {
-        this.takeOffTime = takeOffTime;
-    }
+	/**
+	 * Gets the discount.
+	 *
+	 * @return the discount
+	 */
+	public Double getDiscount() {
+		return discount;
+	}
 
-    public Date getLandingTime() {
-        return landingTime;
-    }
+	/**
+	 * Sets the discount.
+	 *
+	 * @param discount the new discount
+	 */
+	public void setDiscount(Double discount) {
+		this.discount = discount;
+	}
 
-    public void setLandingTime(Date landingTime) {
-        this.landingTime = landingTime;
-    }
+	/**
+	 * Gets the tax.
+	 *
+	 * @return the tax
+	 */
+	public Double getTax() {
+		return tax;
+	}
 
-    public Integer getDaily() {
-        return daily;
-    }
+	/**
+	 * Sets the tax.
+	 *
+	 * @param tax the new tax
+	 */
+	public void setTax(Double tax) {
+		this.tax = tax;
+	}
 
-    public void setDaily(Integer daily) {
-        this.daily = daily;
-    }
+	/**
+	 * Gets the other charges.
+	 *
+	 * @return the other charges
+	 */
+	public Double getOtherCharges() {
+		return otherCharges;
+	}
 
-    public Integer getWeekDays() {
-        return weekDays;
-    }
+	/**
+	 * Sets the other charges.
+	 *
+	 * @param otherCharges the new other charges
+	 */
+	public void setOtherCharges(Double otherCharges) {
+		this.otherCharges = otherCharges;
+	}
 
-    public void setWeekDays(Integer weekDays) {
-        this.weekDays = weekDays;
-    }
+	/**
+	 * Gets the ticket cost.
+	 *
+	 * @return the ticket cost
+	 */
+	public Double getTicketCost() {
+		return ticketCost;
+	}
 
-    public Integer getWeekEnds() {
-        return weekEnds;
-    }
+	/**
+	 * Sets the ticket cost.
+	 *
+	 * @param ticketCost the new ticket cost
+	 */
+	public void setTicketCost(Double ticketCost) {
+		this.ticketCost = ticketCost;
+	}
 
-    public void setWeekEnds(Integer weekEnds) {
-        this.weekEnds = weekEnds;
-    }
+	/**
+	 * Gets the other charge info.
+	 *
+	 * @return the other charge info
+	 */
+	public String getOtherChargeInfo() {
+		return otherChargeInfo;
+	}
 
-    public Integer getSpecificDays() {
-        return specificDays;
-    }
+	/**
+	 * Sets the other charge info.
+	 *
+	 * @param otherChargeInfo the new other charge info
+	 */
+	public void setOtherChargeInfo(String otherChargeInfo) {
+		this.otherChargeInfo = otherChargeInfo;
+	}
 
-    public void setSpecificDays(Integer specificDays) {
-        this.specificDays = specificDays;
-    }
+	/**
+	 * Gets the flight no.
+	 *
+	 * @return the flight no
+	 */
+	public String getFlightNo() {
+		return flightNo;
+	}
 
-    public String getSpecificDaysList() {
-        return specificDaysList;
-    }
+	/**
+	 * Sets the flight no.
+	 *
+	 * @param flightNo the new flight no
+	 */
+	public void setFlightNo(String flightNo) {
+		this.flightNo = flightNo;
+	}
 
-    public void setSpecificDaysList(String specificDaysList) {
-        this.specificDaysList = specificDaysList;
-    }
+	/**
+	 * Gets the block.
+	 *
+	 * @return the block
+	 */
+	public int getBlock() {
+		return block;
+	}
 
-    public Double getFligtTime() {
-        return fligtTime;
-    }
-
-    public void setFligtTime(Double fligtTime) {
-        this.fligtTime = fligtTime;
-    }
+	/**
+	 * Sets the block.
+	 *
+	 * @param block the new block
+	 */
+	public void setBlock(int block) {
+		this.block = block;
+	}
 }

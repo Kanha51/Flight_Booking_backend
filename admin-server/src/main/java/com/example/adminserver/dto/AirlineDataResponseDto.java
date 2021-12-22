@@ -1,65 +1,119 @@
 package com.example.adminserver.dto;
 
+/**
+ * The Class AirlineDataResponseDto.
+ */
 public class AirlineDataResponseDto {
 
-    private String uniqueId;
-    /**
-     * The airline name.
-     */
-    private String airlineName;
+	/** The unique id. */
+	private String uniqueId;
+	/**
+	 * The airline name.
+	 */
+	private String airlineName;
 
-    /**
-     * The logo.
-     */
-    private Byte logo;
+	/**
+	 * The logo.
+	 */
+	private Byte logo;
 
-    /**
-     * The contact no.
-     */
-    private Long contactNo;
+	/**
+	 * The contact no.
+	 */
+	private Long contactNo;
 
-    /**
-     * The airline address.
-     */
-    private String airlineAddress;
+	/**
+	 * The airline address.
+	 */
+	private String airlineAddress;
 
-    public String getUniqueId() {
-        return uniqueId;
-    }
+	/**
+	 * Gets the unique id.
+	 *
+	 * @return the unique id
+	 */
+	public String getUniqueId() {
+		return uniqueId;
+	}
 
-    public void setUniqueId(String uniqueId) {
-        this.uniqueId = uniqueId;
-    }
+	/**
+	 * Sets the unique id.
+	 *
+	 * @param uniqueId the new unique id
+	 */
+	public void setUniqueId(String uniqueId) {
+		this.uniqueId = uniqueId;
+	}
 
-    public String getAirlineName() {
-        return airlineName;
-    }
+	/**
+	 * Gets the airline name.
+	 *
+	 * @return the airline name
+	 */
+	public String getAirlineName() {
+		return airlineName;
+	}
 
-    public void setAirlineName(String airlineName) {
-        this.airlineName = airlineName;
-    }
+	/**
+	 * Sets the airline name.
+	 *
+	 * @param airlineName the new airline name
+	 */
+	public void setAirlineName(String airlineName) {
+		this.airlineName = airlineName;
+	}
 
-    public Byte getLogo() {
-        return logo;
-    }
+	/**
+	 * Gets the logo.
+	 *
+	 * @return the logo
+	 */
+	public Byte getLogo() {
+		return logo;
+	}
 
-    public void setLogo(Byte logo) {
-        this.logo = logo;
-    }
+	/**
+	 * Sets the logo.
+	 *
+	 * @param logo the new logo
+	 */
+	public void setLogo(Byte logo) {
+		this.logo = logo;
+	}
 
-    public Long getContactNo() {
-        return contactNo;
-    }
+	/**
+	 * Gets the contact no.
+	 *
+	 * @return the contact no
+	 */
+	public Long getContactNo() {
+		return contactNo;
+	}
 
-    public void setContactNo(Long contactNo) {
-        this.contactNo = contactNo;
-    }
+	/**
+	 * Sets the contact no.
+	 *
+	 * @param contactNo the new contact no
+	 */
+	public void setContactNo(Long contactNo) {
+		this.contactNo = contactNo;
+	}
 
-    public String getAirlineAddress() {
-        return airlineAddress;
-    }
+	/**
+	 * Gets the airline address.
+	 *
+	 * @return the airline address
+	 */
+	public String getAirlineAddress() {
+		return airlineAddress;
+	}
 
-    public void setAirlineAddress(String airlineAddress) {
-        this.airlineAddress = airlineAddress;
-    }
+	/**
+	 * Sets the airline address.
+	 *
+	 * @param airlineAddress the new airline address
+	 */
+	public void setAirlineAddress(String airlineAddress) {
+		this.airlineAddress = airlineAddress;
+	}
 }

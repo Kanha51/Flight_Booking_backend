@@ -20,7 +20,7 @@ public class JwtTokenService implements Serializable {
     /**
      * The constant JWT_TOKEN_VALIDITY.
      */
-    public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
+    public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60000;
     /**
      * The constant serialVersionUID.
      */

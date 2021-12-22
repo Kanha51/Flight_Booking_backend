@@ -1,14 +1,28 @@
 package com.example.users.dto;
 
+/**
+ * The Class FlightHistoryRequestDto.
+ */
 public class FlightHistoryRequestDto {
 
-    private Long userId;
+	/** The user name. */
+	private String userName;
 
-    public Long getUserId() {
-        return userId;
-    }
+	/**
+	 * Gets the user name.
+	 *
+	 * @return the user name
+	 */
+	public String getUserName() {
+		return userName;
+	}
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
+	/**
+	 * Sets the user name.
+	 *
+	 * @param userName the new user name
+	 */
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 }

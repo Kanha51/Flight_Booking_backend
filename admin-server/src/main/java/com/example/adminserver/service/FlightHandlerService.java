@@ -3,12 +3,14 @@ package com.example.adminserver.service;
 
 import com.example.adminserver.dto.*;
 
+import java.util.List;
+
 /**
  * The Interface FlightHandlerService.
  */
 public interface FlightHandlerService {
 
-    AirlineDataDtoList getAirlinreData();
+    List<AirlineDataRequestDto> getAirlinreData();
 
     /**
      * Adds the airline.
@@ -16,7 +18,7 @@ public interface FlightHandlerService {
      * @param airlineDataDto the airline data dto
      * @return the airline data dto
      */
-    AirlineDataResponseDto addAirline(AirlineDataRequestDto airlineDataDto);
+    AirlineDataRequestDto addAirline(AirlineDataRequestDto airlineDataDto);
 
     /**
      * Block airline.
@@ -32,5 +34,12 @@ public interface FlightHandlerService {
      * @param flightScheduleDto the flight schedule dto
      * @return the flight info schedule dto
      */
-    FlightScheduleResponseDto flightSchedule(FlightScheduleRequestDto flightScheduleDto);
+    FlightScheduleRequestDto flightSchedule(FlightScheduleRequestDto flightScheduleDto);
+
+    List<FlightScheduleRequestDto> getAllFlightData();
+
+
+    List<FlightSearchResultDto> searchFlights(FlightSearchDto dto);
+
+    TicketUpdateDto ticketUpdate(TicketUpdateDto dto);
 }

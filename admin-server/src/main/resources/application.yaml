@@ -13,14 +13,17 @@ spring:
   application:
     name: airlineSchedule-ws
   datasource:
-    driverClassName: org.h2.Driver
-    password: sa
-    url: jdbc:h2:mem:testDB
-    username: sa
+    driverClassName: com.mysql.jdbc.Driver
+    password: admin
+    url: jdbc:mysql://3.19.54.80:3306/mysql
+    username: admin
   h2:
     console:
       enabled: true
       settings:
         web-allow-others: true
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true

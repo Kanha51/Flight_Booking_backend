@@ -1,8 +1,28 @@
 package com.example.users.dto;
 
-import lombok.Data;
-
-@Data
+/**
+ * The Class JwtResponse.
+ */
 public class JwtResponse {
-    private String token;
+
+	/** The token. */
+	private String token;
+
+	/**
+	 * Gets the token.
+	 *
+	 * @return the token
+	 */
+	public String getToken() {
+		return token;
+	}
+
+	/**
+	 * Sets the token.
+	 *
+	 * @param token the new token
+	 */
+	public void setToken(String token) {
+		this.token = token;
+	}
 }

@@ -1,13 +1,44 @@
 package com.example.adminserver.repository;
 
+import java.sql.Date;
+import java.util.List;
 
-import com.example.adminserver.entity.AirlineDataEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.example.adminserver.entity.AirlineDataEntity;
+
+/**
+ * The Interface AirlineDataRepository.
+ */
 @Repository
 public interface AirlineDataRepository extends JpaRepository<AirlineDataEntity, Long> {
 
-    AirlineDataEntity findByUniqueId(String uniqueId);
+	/**
+	 * Find by flight no.
+	 *
+	 * @param uniqueId the unique id
+	 * @return the airline data entity
+	 */
+	AirlineDataEntity findByFlightNo(String uniqueId);
 
+	/**
+	 * Find by block.
+	 *
+	 * @param block the block
+	 * @return the list
+	 */
+	List<AirlineDataEntity> findByBlock(int block);
+
+	/**
+	 * Find by from flight code and to flight code and start date and block.
+	 *
+	 * @param fromCode the from code
+	 * @param toCode   the to code
+	 * @param starDate the star date
+	 * @param val      the val
+	 * @return the list
+	 */
+	List<AirlineDataEntity> findByFromFlightCodeAndToFlightCodeAndStartDateAndBlock(String fromCode, String toCode,
+			Date starDate, int val);
 }

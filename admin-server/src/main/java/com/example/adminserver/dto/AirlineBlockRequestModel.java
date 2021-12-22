@@ -1,14 +1,28 @@
 package com.example.adminserver.dto;
 
+/**
+ * The Class AirlineBlockRequestModel.
+ */
 public class AirlineBlockRequestModel {
 
-    private String uniqueAirlineId;
+	/** The flight no. */
+	private String flightNo;
 
-    public String getUniqueAirlineId() {
-        return uniqueAirlineId;
-    }
+	/**
+	 * Gets the flight no.
+	 *
+	 * @return the flight no
+	 */
+	public String getFlightNo() {
+		return flightNo;
+	}
 
-    public void setUniqueAirlineId(String uniqueAirlineId) {
-        this.uniqueAirlineId = uniqueAirlineId;
-    }
+	/**
+	 * Sets the flight no.
+	 *
+	 * @param flightNo the new flight no
+	 */
+	public void setFlightNo(String flightNo) {
+		this.flightNo = flightNo;
+	}
 }

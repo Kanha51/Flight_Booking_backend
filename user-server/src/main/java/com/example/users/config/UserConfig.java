@@ -4,12 +4,20 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * The Class UserConfig.
+ */
 @Configuration
 public class UserConfig {
 
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
-    }
+	/**
+	 * Model mapper.
+	 *
+	 * @return the model mapper
+	 */
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
+	}
 
 }
