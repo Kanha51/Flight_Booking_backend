@@ -13,6 +13,7 @@ public class FlightSearchResultDto implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/** The airline name. */
 	private String airlineName;
 
 	/**
@@ -25,30 +26,7 @@ public class FlightSearchResultDto implements Serializable {
 	 */
 	private String airlineAddress;
 
-	/**
-	 * The daily.
-	 */
-	private Integer daily;
 
-	/**
-	 * The week days.
-	 */
-	private Integer weekDays;
-
-	/**
-	 * The week ends.
-	 */
-	private Integer weekEnds;
-
-	/**
-	 * The specific days.
-	 */
-	private Integer specificDays;
-
-	/**
-	 * The specific days list.
-	 */
-	private String specificDaysList;
 
 	/**
 	 * The meals.
@@ -65,6 +43,7 @@ public class FlightSearchResultDto implements Serializable {
 	 */
 	private String fromFlight;
 
+	/** The from flight code. */
 	private String fromFlightCode;
 
 	/**
@@ -72,20 +51,36 @@ public class FlightSearchResultDto implements Serializable {
 	 */
 	private String toFlight;
 
+	/** The flight no. */
 	private String flightNo;
 
+	/** The to flight code. */
 	private String toFlightCode;
 
+	/** The cost. */
 	public Double cost;
 
+	/** The flight date. */
 	public Date flightDate;
 
+	/** The take off time. */
 	private java.util.Date takeOffTime;
 
+	/** The landing time. */
 	private java.util.Date landingTime;
 
-	public static long getSerialVersionUID() {
-		return serialVersionUID;
+	private Long businessSeats;
+
+	private Long nonBusinesSeats;
+
+	private Double tax;
+
+	public Double getTax() {
+		return tax;
+	}
+
+	public void setTax(Double tax) {
+		this.tax = tax;
 	}
 
 	public String getAirlineName() {
@@ -110,46 +105,6 @@ public class FlightSearchResultDto implements Serializable {
 
 	public void setAirlineAddress(String airlineAddress) {
 		this.airlineAddress = airlineAddress;
-	}
-
-	public Integer getDaily() {
-		return daily;
-	}
-
-	public void setDaily(Integer daily) {
-		this.daily = daily;
-	}
-
-	public Integer getWeekDays() {
-		return weekDays;
-	}
-
-	public void setWeekDays(Integer weekDays) {
-		this.weekDays = weekDays;
-	}
-
-	public Integer getWeekEnds() {
-		return weekEnds;
-	}
-
-	public void setWeekEnds(Integer weekEnds) {
-		this.weekEnds = weekEnds;
-	}
-
-	public Integer getSpecificDays() {
-		return specificDays;
-	}
-
-	public void setSpecificDays(Integer specificDays) {
-		this.specificDays = specificDays;
-	}
-
-	public String getSpecificDaysList() {
-		return specificDaysList;
-	}
-
-	public void setSpecificDaysList(String specificDaysList) {
-		this.specificDaysList = specificDaysList;
 	}
 
 	public String getMeals() {
@@ -238,5 +193,21 @@ public class FlightSearchResultDto implements Serializable {
 
 	public void setLandingTime(java.util.Date landingTime) {
 		this.landingTime = landingTime;
+	}
+
+	public Long getBusinessSeats() {
+		return businessSeats;
+	}
+
+	public void setBusinessSeats(Long businessSeats) {
+		this.businessSeats = businessSeats;
+	}
+
+	public Long getNonBusinesSeats() {
+		return nonBusinesSeats;
+	}
+
+	public void setNonBusinesSeats(Long nonBusinesSeats) {
+		this.nonBusinesSeats = nonBusinesSeats;
 	}
 }

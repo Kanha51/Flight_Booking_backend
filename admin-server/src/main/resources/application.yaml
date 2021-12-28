@@ -10,6 +10,10 @@ eureka:
 server:
   port: 8082
 spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
   application:
     name: airlineSchedule-ws
   datasource:
@@ -25,5 +29,5 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     generate-ddl: true

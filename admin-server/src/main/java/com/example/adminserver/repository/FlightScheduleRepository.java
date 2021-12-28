@@ -29,7 +29,7 @@ public interface FlightScheduleRepository extends JpaRepository<FlightScheduleEn
 	 * @param val1     the val 1
 	 * @return the flight schedule entity
 	 */
-	FlightScheduleEntity findByFlightNoAndNonBusinessSeatsNotAndBusinessSeatsNot(String flightNo, int val, int val1);
+	FlightScheduleEntity findByFlightNoAndNonBusinessSeatsNotAndBusinessSeatsNot(String flightNo, Long val, Long val1);
 
 	/**
 	 * Find by block.

@@ -124,9 +124,9 @@ public class UserServiceImpl implements UserService {
 		List<FlightBookingDetailEntity> flightEntityList = flightBookingDetailRepository
 				.findByCustomerEmailId(dto.getUserName());
 		for (FlightBookingDetailEntity flightEntity : flightEntityList) {
-			FlightHistoryDto resultDto = new FlightHistoryDto();
+
 			long bookingDate = flightEntity.getDateTime().getTime();
-			resultDto = modelMapper.map(flightEntity, FlightHistoryDto.class);
+			FlightHistoryDto resultDto = modelMapper.map(flightEntity, FlightHistoryDto.class);
 			if (flightEntity.getSeatType() == 0) {
 				resultDto.setSeatType("Non Business Seat");
 			} else if (flightEntity.getSeatType() == 1) {
@@ -146,7 +146,7 @@ public class UserServiceImpl implements UserService {
 	public UserSignUpResponseDto userSignUp(UserSignUpDto dto) {
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		UserSignUpResponseDto resultDto = new UserSignUpResponseDto();
-		if (!userLoginRepo.findByEmailId(dto.getEmailId()).isPresent()) {
+		if (userLoginRepo.findByEmailId(dto.getEmailId()).isEmpty()) {
 			UserLoginEntity entity = modelMapper.map(dto, UserLoginEntity.class);
 			entity = userLoginRepo.save(entity);
 			resultDto = modelMapper.map(entity, UserSignUpResponseDto.class);

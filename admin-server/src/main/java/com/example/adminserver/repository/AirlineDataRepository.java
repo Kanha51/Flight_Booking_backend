@@ -28,15 +28,12 @@ public interface AirlineDataRepository extends JpaRepository<AirlineDataEntity, 
 	 * @param block the block
 	 * @return the list
 	 */
-	List<AirlineDataEntity> findByBlock(int block);
+	List<AirlineDataEntity> findByBlock(Integer block);
 
 	/**
 	 * Find by from flight code and to flight code and start date and block.
 	 *
 	 * @param fromCode the from code
-	 * @param toCode   the to code
-	 * @param starDate the star date
-	 * @param val      the val
 	 * @return the list
 	 */
 	List<AirlineDataEntity> findByFromFlightCodeAndToFlightCodeAndStartDateAndBlock(String fromCode, String toCode,

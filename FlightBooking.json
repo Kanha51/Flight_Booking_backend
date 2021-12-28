@@ -1,0 +1,300 @@
+{
+	"id": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+	"name": "Flight booking",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "admin",
+			"description": "",
+			"collectionId": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+			"order": [
+				"4eb3dcee-41a9-82bf-1bc5-5accc2c9677e",
+				"8074225d-a318-ddec-4e5a-76aaeca8345f",
+				"4bb39ede-deaa-f22b-bbf3-a75ca6762040",
+				"ef6769e0-ad1f-f593-dae1-9cb6f8edb216",
+				"c0407c0b-9666-9c15-2f5b-05b2565f3f19"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "884d6fcd-72d0-c85a-ced8-88e93edbb73f"
+		},
+		{
+			"name": "user",
+			"description": "",
+			"collectionId": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+			"order": [
+				"d405de87-45a2-59d8-f402-91187d603289",
+				"6ff74af5-790d-797c-d283-2569dd15dae9",
+				"155e7d48-c72d-0100-b74d-b8755f3b2546"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "1e28ba89-c233-8012-52de-8b1d4f7b7461"
+		}
+	],
+	"folders_order": [
+		"884d6fcd-72d0-c85a-ced8-88e93edbb73f",
+		"1e28ba89-c233-8012-52de-8b1d4f7b7461"
+	],
+	"timestamp": 1638853629307,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "155e7d48-c72d-0100-b74d-b8755f3b2546",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8084/api/v1.0/flight/flighthistory",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+			"data": [],
+			"dataMode": "raw",
+			"name": "history",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1639035594279,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "1e28ba89-c233-8012-52de-8b1d4f7b7461",
+			"rawModeData": "{\n\t\"userId\":1\n}"
+		},
+		{
+			"id": "4bb39ede-deaa-f22b-bbf3-a75ca6762040",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/api/v1.0/flight/airline/inventory/add",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+			"data": [],
+			"dataMode": "raw",
+			"name": "inventory/add",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1638858431778,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "884d6fcd-72d0-c85a-ced8-88e93edbb73f",
+			"rawModeData": "{\r\n  \"airlineId\": \"17c7900f\",\r\n  \"businessSeats\": 10,\r\n  \"daily\": 1,\r\n  \"discount\": 0,\r\n  \"endDate\": \"2021-12-07T06:03:17.712Z\",\r\n  \"fromFlight\": \"Bangalore\",\r\n  \"fromFlightCode\": \"BAN\",\r\n  \"instrument\": \"Boing 7677\",\r\n \"landingTime\": \"2021-12-07T06:12:41.854Z\",\r\n  \"meals\": \"Veg\",\r\n  \"noOfRows\": 2,\r\n  \"nonBusinessSeats\": 1,\r\n  \"otherChargeInfo\": \"string\",\r\n  \"otherCharges\": 10.00,\r\n  \"seatType\": 1,\r\n  \"specificDays\": 0,\r\n  \"specificDaysList\": \"string\",\r\n  \"startDate\": \"2021-12-07T06:03:17.713Z\",\r\n   \"takeOffTime\": \"2021-12-07T06:12:41.854Z\",\r\n  \"tax\": 10.0,\r\n  \"ticketCost\": 10.0,\r\n  \"toFlight\": \"Delhi\",\r\n  \"toFlightCode\": \"DEL\",\r\n  \"weekDays\": 0,\r\n  \"weekEnds\": 0\r\n}"
+		},
+		{
+			"id": "4eb3dcee-41a9-82bf-1bc5-5accc2c9677e",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzODkzOTkxMSwiaWF0IjoxNjM4OTM5ODkzfQ.o5CEBPJe4UOT0IFvI9hHkn89JsqVgWoDsYo0DMiEAuWuP4k8pJC39z5sx-jUe8BKPP3yV0WpFsk9Xl5whXG86Q\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzODkzOTkxMSwiaWF0IjoxNjM4OTM5ODkzfQ.o5CEBPJe4UOT0IFvI9hHkn89JsqVgWoDsYo0DMiEAuWuP4k8pJC39z5sx-jUe8BKPP3yV0WpFsk9Xl5whXG86Q",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/api/v1.0/flight/airline/register",
+			"folder": "884d6fcd-72d0-c85a-ced8-88e93edbb73f",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1638962882707,
+			"name": "registerairline",
+			"description": "",
+			"collectionId": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+			"responses": [],
+			"rawModeData": "{\r\n  \"airlineAddress\": \"Bangalore\",\r\n  \"airlineName\": \"Indigo\",\r\n  \"contactNo\": 987654321,\r\n  \"logo\": 1\r\n}"
+		},
+		{
+			"id": "6ff74af5-790d-797c-d283-2569dd15dae9",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8084/api/v1.0/flight/user/login",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+			"data": [],
+			"dataMode": "raw",
+			"name": "User_Login",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1639035340250,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "1e28ba89-c233-8012-52de-8b1d4f7b7461",
+			"rawModeData": "{\n\t\"username\":\"test@test.com\",\n\t\"password\":\"YWRtaW4=\"\n}"
+		},
+		{
+			"id": "8074225d-a318-ddec-4e5a-76aaeca8345f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/api/v1.0/flight/airline/block",
+			"folder": "884d6fcd-72d0-c85a-ced8-88e93edbb73f",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1638858435080,
+			"name": "block airline",
+			"description": "",
+			"collectionId": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+			"responses": [],
+			"rawModeData": "{  \"uniqueAirlineId\": \"f4cbd572\"}"
+		},
+		{
+			"id": "c0407c0b-9666-9c15-2f5b-05b2565f3f19",
+			"headers": "Authorization: Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzODk2Mjk3NCwiaWF0IjoxNjM4OTYyOTU2fQ.CUDg2G_3TyGfPQRGN7TRURFpg2O03JPx_yVGuikk5vyjtDCl_i4qfL8dN7ImTUE6ozDEVWANbAqDwZByzrxgZg\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzODk2Mjk3NCwiaWF0IjoxNjM4OTYyOTU2fQ.CUDg2G_3TyGfPQRGN7TRURFpg2O03JPx_yVGuikk5vyjtDCl_i4qfL8dN7ImTUE6ozDEVWANbAqDwZByzrxgZg",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/api/v1.0/flight/airline/airlinedata",
+			"folder": "884d6fcd-72d0-c85a-ced8-88e93edbb73f",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1638963010711,
+			"name": "airlineData",
+			"description": "",
+			"collectionId": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+			"responses": []
+		},
+		{
+			"id": "d405de87-45a2-59d8-f402-91187d603289",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8084/api/v1.0/flight/booking",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Book Ticket",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1639035285739,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "1e28ba89-c233-8012-52de-8b1d4f7b7461",
+			"rawModeData": "{\r\n  \"customerEmailId\": \"test@mail.com\",\r\n  \"customerName\": \"string\",\r\n  \"dateTime\": \"2021-12-09T07:32:06.246Z\",\r\n  \"discount\": 10.2,\r\n  \"discountPercentage\": 2.2,\r\n  \"flightFrom\": \"Bangalore\",\r\n  \"flightFromCode\": \"BAN\",\r\n  \"flightNo\": \"UUYHS\",\r\n  \"flightTime\": 2.5,\r\n  \"flightTo\": \"DELHI\",\r\n  \"flightToCode\": \"DEL\",\r\n  \"mealType\": \"Veg\",\r\n  \"noOfSeats\": 2,\r\n  \"passangerInfo\": [\r\n    {\r\n      \"passangerAge\": 44,\r\n      \"passangerGender\": \"Male\",\r\n      \"passangerName\": \"Passanger1\"\r\n    },\r\n     {\r\n      \"passangerAge\": 50,\r\n      \"passangerGender\": \"Female\",\r\n      \"passangerName\": \"Passanger2\"\r\n    }\r\n  ],\r\n  \"price\": 100.22,\r\n  \"seatType\": 1,\r\n  \"tax\": 220,\r\n  \"totalPrice\": 500,\r\n  \"userId\": 1\r\n}"
+		},
+		{
+			"id": "ef6769e0-ad1f-f593-dae1-9cb6f8edb216",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/api/v1.0/admin/login",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "d4c0cead-ae14-56b4-d5b5-c7e7537c0425",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Login",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1638939214499,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "884d6fcd-72d0-c85a-ced8-88e93edbb73f",
+			"rawModeData": "{\n\t\"username\":\"admin\",\n\t\"password\":\"YWRtaW4=\"\n}"
+		}
+	]
+}

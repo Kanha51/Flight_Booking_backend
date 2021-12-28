@@ -15,7 +15,7 @@ public class FlightHistoryDto {
 	private String flightNo;
 
 	/** The can cancel. */
-	private int canCancel;
+	private Integer canCancel;
 	/**
 	 * The Date time.
 	 */

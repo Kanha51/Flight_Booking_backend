@@ -17,10 +17,6 @@ public class UserConstant {
 	 */
 	public static final String URL_CANCEL_TICKET = "cancel";
 
-	/**
-	 * The constant URL_SEARCHED_BY_PNR.
-	 */
-	public static final String URL_SEARCHED_BY_PNR = "ticket/{pnr}";
 
 	/**
 	 * The constant URL_SEARCHED_BY_EMAIL_ID.

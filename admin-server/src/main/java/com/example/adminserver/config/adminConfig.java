@@ -1,6 +1,4 @@
-/*
- *
- */
+
 package com.example.adminserver.config;
 
 import org.modelmapper.ModelMapper;
