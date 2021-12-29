@@ -10,6 +10,8 @@ eureka:
 server:
   port: 8086
 spring:
+  main:
+    allow-bean-definition-overriding: true
   boot:
     admin:
       client:
