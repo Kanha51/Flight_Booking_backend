@@ -98,22 +98,11 @@ public class UserServiceImpl implements UserService {
 	public UserFlightStatusDto cancelTicket(String pnrNo) {
 		UserFlightStatusDto returnDto = new UserFlightStatusDto();
 		FlightBookingDetailEntity entity = flightBookingDetailRepository.findByPnrNo(pnrNo);
-
 		entity.setCancelTicket(UserConstant.INACTIVE_FLAG);
 		flightBookingDetailRepository.save(entity);
 		returnDto.setStatus("Flight Cancelled");
 
 		return returnDto;
-	}
-
-	/**
-	 * Search flight details by email or pnr list.
-	 *
-	 * @param emailIdPnr the email id pnr
-	 * @return the list
-	 */
-	public List<FlightBookingDetailEntity> searchFlightDetailsByEmailOrPnr(String emailIdPnr) {
-		return flightBookingDetailRepository.findByCustomerEmailIdOrPnrNo(emailIdPnr, emailIdPnr);
 	}
 
 	@Override
@@ -144,7 +133,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserSignUpResponseDto userSignUp(UserSignUpDto dto) {
-		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+		// modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		UserSignUpResponseDto resultDto = new UserSignUpResponseDto();
 		if (userLoginRepo.findByEmailId(dto.getEmailId()).isEmpty()) {
 			UserLoginEntity entity = modelMapper.map(dto, UserLoginEntity.class);
